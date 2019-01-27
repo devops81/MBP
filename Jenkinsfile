@@ -24,11 +24,10 @@ pipeline {
         }
 
 
-        stage ('Deployment Stage') {
+        stage ('Send out email Notification') {
             steps {
-
-                    sh 'mvn deploy'
+                emailext body: '$DEFAULT_CONTENT', subject: '$DEFAULT_SUBJECT', to: 'devops81@gmail.com'
                   }
-        }
+    }
     }
 }
