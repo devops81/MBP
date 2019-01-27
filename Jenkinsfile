@@ -10,7 +10,7 @@ pipeline {
          
                   }
                                 }
-        def mvnHome = tool name: 'MVN3', type: 'maven'
+
         stage ('Testing Stage') {
 
             steps  {
@@ -23,7 +23,7 @@ pipeline {
 
         stage ('Deployment Stage') {
             steps {
-                    def mvnHome = tool name: 'MVN3', type: 'maven'
+
                     sh '${mvnHome}/bin/mvn deploy'
                   }
         }
